@@ -45,7 +45,7 @@ def get_naver_search(node, search_text, start, display):
     if response is None:
         return None
     else:
-        return json.loads(response)  # json 문자열을 Python 객체로 변환
+        return json.loads(response) 
 
 
 def get_post_data(post, json_result_list, cnt):
@@ -66,7 +66,7 @@ def get_post_data(post, json_result_list, cnt):
     json_result_list.append([title, description])
 
 def main():
-    node = 'blog'  # 크롤링 대상
+    node = 'blog'  
     search_text = '인공지능 면접후기'
     cnt = 0
     json_result_list = []
@@ -83,8 +83,6 @@ def main():
             
             if cnt == 900: break
 
-    # csv 파일로 저장
-    # ['제목', '개요']
     DIR_PATH = './company/'
     columns = ['title', 'description']
     result_df = pd.DataFrame(json_result_list, columns=columns)
