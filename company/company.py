@@ -36,11 +36,6 @@ def getNoun(df):
                 if len(noun)> 1: nouns_list.append(noun)
     return nouns_list
 
-# def removeDict(noun_list, rmword_list):
-#     for word in rmword_list:
-#         if word in noun_list: noun_list.remove(word)
-#     return noun_list
-
 def removeDict(noun_list, rmword_list):
     return [word for word in noun_list if word not in rmword_list]
 
