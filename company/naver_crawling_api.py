@@ -17,8 +17,8 @@ if not hasattr(collections, 'Callable'):
     collections.Callable = collections.abc.Callable
 
 def get_request_url(url):
-    client_id = 'ZD5ccvy2mKt8L3FsIIjH'
-    client_secret = 'v1groqzFKD'
+    client_id = 'your_api_id'
+    client_secret = 'yout_api_password'
 
     req = urllib.request.Request(url)
     req.add_header("X-Naver-Client-Id", client_id)
