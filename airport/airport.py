@@ -32,8 +32,12 @@ def getFile(DIR_PATH):
             # 합계 행 삭제
             df = df.drop(index=[0,1,4])
             allDF.append(df)
+        elif ext == '.csv':
+            airline_df = pd.read_csv(DIR_PATH+file)
+            # print('항공사별 화물기 표')
+            # print(tabulate(airline_df, headers='keys',tablefmt='github'))
 
-    return allDF
+    return allDF, airline_df
 
 
 def showInfo(df):
@@ -128,8 +132,8 @@ def drawGraph(corrDF,FILE_PATH):
         plt.show()
         
 
-def drawAiportGraph(aiportDF,years,columns,FILE_PATH):
-    makeDir(FILE_PATH)
+def drawAiportGraph(aiportDF,years,columns,IMG_PATH):
+    makeDir(IMG_PATH)
     for col in columns:
         fig, axes = plt.subplots(nrows=1, ncols=len(years), figsize=(30,6), sharey=True)
         for i, year in enumerate(years):
@@ -150,21 +154,35 @@ def drawAiportGraph(aiportDF,years,columns,FILE_PATH):
         fig.suptitle(f'항공사별 {col} 연도별 비교', fontsize=15)
         fig.supxlabel('항공사', fontsize=15)
         plt.tight_layout(rect=[0,0,1,0.95])
-        plt.savefig(FILE_PATH+f'항공사별 {col} 연도별 비교')
-        plt.show()            
+        plt.savefig(IMG_PATH+f'항공사별 {col} 연도별 비교')
+        plt.show()     
+        
+def drawAirlineGraph(airline_df, IMG_PATH):
+    years = ariline_df.columns[1:]
+    airports = airline_df['항공사'].values
+    # colors = ['#ff9999', '#ffc000', '#8fd9b6', '#d395d0']
+    
+    for year in years:
+        vals = airline_df.loc[:,year].values
+        plt.figure(figsize=(5,5))
+        plt.pie(vals,labels=airports, autopct='%.1f%%',colors=plt.cm.Set2.colors)
+        plt.title(f'{year}년도 항공사별 화물기 비율')
+        plt.tight_layout()
+        plt.savefig(IMG_PATH+f'{year}년 항공사별 화물기 비율')
+        plt.show()
         
 
 if __name__ == '__main__':
     DIR_PATH = './airport/'
-    FILE_PATH = './airport/image/'
+    IMG_PATH = './airport/image/'
 
     columns = ['공급(석)','운항(편)','여객(명)','화물(톤)']
     years = ['2019','2020','2021','2022','2023']
 
     # 전체 수치 데이터프레임 만들기
-    allDF = getFile(DIR_PATH)
+    allDF, ariline_df = getFile(DIR_PATH)
     airportDF= makeDF(allDF,years)
-    # drawAiportGraph(airportDF,years,columns,FILE_PATH)
+    drawAiportGraph(airportDF,years,columns,IMG_PATH)
     
     # 주요 지표들간 상관관계 데이터프레임 만들기
     allAirportCorr = getCorr(airportDF,years)
@@ -172,14 +190,7 @@ if __name__ == '__main__':
     
     # 각 주요지표들 상관관계 그래프 뽑기 
     corrDF = checkCorr(allAirportCorr,columns)
-    drawGraph(corrDF,FILE_PATH)
+    drawGraph(corrDF,IMG_PATH)
     
-
-    
-    
-    
-    
-
-
-
-    
+    # 항공사별 화물기 비율 그래프 뽑기
+    drawAirlineGraph(ariline_df,IMG_PATH)
