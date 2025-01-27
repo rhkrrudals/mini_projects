@@ -67,21 +67,26 @@ def get_post_data(post, json_result_list, cnt):
 
 def main():
     node = 'blog'  
-    search_text = '인공지능 면접후기'
+    search_text = '개발자 면접후기'
+    start = 1
     cnt = 0
     json_result_list = []
     
-    while cnt < 900:
-        json_response = get_naver_search(node, search_text, 1, 100)
-        while (json_response is not None) and (json_response['display'] != 0):
-            
-            for post in json_response['items']:
-                cnt += 1
-                get_post_data(post, json_result_list, cnt)
-            start = json_response['start'] + json_response['display']
+    while cnt < 1000 and start <= 1000:
+        try: 
             json_response = get_naver_search(node, search_text, start, 100)
+            if json_response and json_response['display'] > 0:
+                for post in json_response['items']:
+                    cnt += 1
+                    get_post_data(post, json_result_list, cnt)
+                    if cnt >= 1000: break
+                start += json_response['display']
+            else: print('데이터가 존재하지 않습니다.')
             
-            if cnt == 900: break
+        except Exception as e:
+            print(f'{e} 에러 발생') 
+            
+    print(f'{cnt}개 데이터 수집을 완료했습니다.')
 
     DIR_PATH = './company/'
     columns = ['title', 'description']
