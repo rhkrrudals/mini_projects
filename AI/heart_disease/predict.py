@@ -13,7 +13,7 @@ from sklearn.ensemble import RandomForestClassifier
 FILE_PATH = './heart_disease/pth/RandomForestClassifier.joblib'
 
 feature_names = ["age", "sex", "cp", "trestbps", "chol", "fbs", "restecg", "thalach", "exang", "oldpeak", "slope", "ca", "thal"]
-input = list(map(int,input('age,sex,cp,trestbps,chol,fbs,restecg,thalach,exang,oldpeak,slope,ca,thal 입력: ').split()))
+input = list(map(float,input('age,sex,cp,trestbps,chol,fbs,restecg,thalach,exang,oldpeak,slope,ca,thal 입력: ').split()))
 X_test = pd.DataFrame([input],columns=feature_names)
 model = joblib.load(FILE_PATH)
 pred = model.predict(X_test)
