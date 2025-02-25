@@ -161,7 +161,7 @@ if __name__ == '__main__':
     
     x_col = 'age' ; y_col='trestbps'
     x_lines = [30,40,50,60,80]
-    y_lines = [127.5,136,144.5,153,161.5]
+    y_lines = list(np.arange(127.5,162,8.5))
     # drawScatter(target_df,x_col,y_col,FILE_PATH,x_lines,y_lines,rect=True)
     
     # models 
