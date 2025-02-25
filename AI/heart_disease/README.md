@@ -39,3 +39,5 @@
 * seaborn == 0.13.2
 * koreanize-matplotlib == 0.1.1
 * joblib == 1.4.2
+* xgboost == 2.1.1
+* py-xgboost == 2.1.1
