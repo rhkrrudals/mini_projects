@@ -27,7 +27,6 @@
 * python == 3.8.20
 * pandas == 2.0.3
 * tabulate == 0.9.0
-* scikit-learn == 1.3.2
 * openpyxl == 3.1.5
 * matplotlib == 3.7.5
 * koreanize-matplotlib == 0.1.1
