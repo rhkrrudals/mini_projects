@@ -1,9 +1,9 @@
 # Olist 이커머스 판매자 여정 분석
 ## 개요
-> Brazilian E-Commerce Olist의 판매자 여정 분석
+> Brazilian E-Commerce Olist의 판매자 여정 분석 결과
 
 ## 목적
-> Brazilian E-Commerce Olist의 판매자 여정 분석 
+> Brazilian E-Commerce Olist의 판매자 여정 분석을 통한 효과적인 고객 유치 방법 도출
 
 ## 분석결과
 > 잠재고객의 회원고객 전환율이 낮아, 랜딩페이지 및 회원가입 페이지 UX/UI 구조 개선이 필요해 보였음
