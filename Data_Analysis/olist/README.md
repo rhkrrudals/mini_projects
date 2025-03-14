@@ -25,7 +25,7 @@
 |olist_marketing_qualified_leads_dataset|마케팅 통해서 Olist 랜딩 페이지 방문한 잠재 고객 정보 |csv|
 |olist_closed_deals_dataset|잠재 고객에서 Olist 회원으로 전환한 고객 정보 |csv|
 ### 데이터 출처
-[데이터 출처](https://www.kaggle.com/datasets/olistbr/brazilian-ecommerce)
+[Olist 데이터 출처](https://www.kaggle.com/datasets/olistbr/brazilian-ecommerce)
 
 ### 요구사항
 * python == 3.8.20
