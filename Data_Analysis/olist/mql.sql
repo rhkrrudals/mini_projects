@@ -14,7 +14,7 @@ select count(seller_id) from olist_closed_deals_dataset ocdd ;
 select count(seller_id) from olist_sellers_dataset osd ;
 
 /*
- * Olist Landing Page MQl's conversion rate is 10.52%, It's too low a rate.. --> WHY? 
+ * Olist MQl's conversion rate 
  */
 select count(omqld.mql_id) as mql_cnt, count(ocdd.mql_id) as closed_deal_cnt, count(ocdd.mql_id)/count(omqld.mql_id) * 100 as `CVR(%)`
 from olist_marketing_qualified_leads_dataset omqld 
@@ -23,7 +23,6 @@ from olist_marketing_qualified_leads_dataset omqld
 
 /*
  * Check the omqld origin 
- * (origin is marketing channel)
  */
 select omqld.origin, mql_cnt.mql_origin_cnt ,count(omqld.origin) as closed_deals_origin_cnt,
 		count(omqld.origin)/mql_cnt.mql_origin_cnt * 100 as `Success rate by origin(%)`
