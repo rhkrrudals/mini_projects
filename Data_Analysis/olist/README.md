@@ -1,4 +1,4 @@
-# Olist 이커머스 판매자 여정 분석
+# Olist 판매자 여정 분석
 ## 개요
 > Brazilian E-Commerce Olist의 판매자 여정 분석 결과
 
