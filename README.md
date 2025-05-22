@@ -1,6 +1,8 @@
 # AI 프로젝트
 - heart_disease : 심장병 환자 분석 및 예측
 - playlist : 플레이리스트 추천 모델 구축
+- fruits : 과일 예측
+- Scene Text Detection : AI 기반 영상 내 텍스트 블러 처리
 
 
 # Data Analysis 
