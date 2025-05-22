@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HOMEPAGE</title>
+    <link type ='text/css' rel="stylesheet" href ='{{url_for('static', filename= 'css/home.css')}}'>
+</head>
+    <body>
+        <header>
+            <h1>kwak kyoung min project</h1>
+            <h5><a href="/info">INFO</a></h5>
+        </header>
+    
+        <section>
+            <ul>
+                <li><a href="/ML"><img src = '{{url_for('static',filename='images/file.png')}}'> Machine Learning</a></li>
+                <li><a href="/DL"><img src = '{{url_for('static',filename='images/file.png')}}'> Deep Learning</a></li>
+                <li><a href="/NLP"><img src = '{{url_for('static',filename='images/file.png')}}'> NLP</a></li>
+                <li><a href="/openCV"><img src = '{{url_for('static',filename='images/file.png')}}'> openCV</a></li>
+            </ul>
+        </section>
+
+        <footer>
+
+        </footer>
+        
+    </body>
+</html>
