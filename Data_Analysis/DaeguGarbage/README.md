@@ -5,7 +5,7 @@
 ## 목적
 > 대구광역시의 생활인구 및 유동인구 밀집지역 내 쓰레기 불법 투기 개선을 위한 쓰레기통 최적 입지 위치 파악
 
-## [분석결과](https://palm-moon-278.notion.site/2b798ff52a01803388b4db4d80d72ce1?source=copy_link)
+# [분석결과 링크 클릭](https://palm-moon-278.notion.site/2b798ff52a01803388b4db4d80d72ce1?source=copy_link)
 
 ### 요구사항
 * python == 3.10.18
