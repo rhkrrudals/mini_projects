@@ -10,6 +10,7 @@
 ### 요구사항
 * python == 3.10.18
 * pulp == 3.3.0
+* shapely == 2.1.1
 * geopandas == 1.1.1
 * pandas == 2.3.1
 * tabulate == 0.9.0
